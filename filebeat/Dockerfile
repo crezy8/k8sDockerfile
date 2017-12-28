@@ -13,10 +13,10 @@ RUN set -x && \
   cd /opt && \
   tar xzvf filebeat.tar.gz && \
   rm -fr /opt/filebeat.tar.gz && \
-  ln -s filebeat-* /opt/filebeat && \
+  ln -s filebeat-${FILEBEAT_VERSION}-linux-x86_64 /opt/filebeat && \
   rm -fr filebeat/filebeat.yml && \
   apt-get purge -y wget && \
   apt-get autoremove -y && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD [ "/opt/filebeat/filebeat", "-e", "-c", "/opt/filebeat/filebeat.yml" ]
+CMD [ "./filebeat", "-e" ]
