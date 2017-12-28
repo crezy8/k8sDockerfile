@@ -19,4 +19,4 @@ RUN set -x && \
   apt-get autoremove -y && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-CMD [ "${FILEBEAT_HOME}/filebeat", "-e", "-c", "${FILEBEAT_HOME}/filebeat.yml" ]
+CMD [ "/opt/filebeat/filebeat", "-e", "-c", "/opt/filebeat/filebeat.yml" ]
