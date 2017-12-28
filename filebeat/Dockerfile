@@ -13,7 +13,7 @@ RUN set -x && \
   cd /opt && \
   tar xzf filebeat.tar.gz && \
   rm -fr /opt/filebeat.tar.gz && \
-  ln -sv filebeat-${FILEBEAT_VERSION}-linux-x86_64/ /opt/filebeat && \
+  mv filebeat-${FILEBEAT_VERSION}-linux-x86_64 filebeat && \
   rm -fr filebeat/filebeat.yml && \
   apt-get purge -y wget && \
   apt-get autoremove -y && \
